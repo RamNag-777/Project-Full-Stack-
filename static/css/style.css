@@ -1,0 +1,43 @@
+/* Minimal cinematic styling and parallax visuals */
+:root{
+  --bg1: #0b0f17;
+  --bg2: #0d1b2a;
+  --accent: #31c3ff;
+}
+body.bg-cinema{
+  background: radial-gradient(1200px 800px at 20% 10%, #112, transparent),
+              radial-gradient(1000px 600px at 80% 20%, #013, transparent),
+              linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: #e6f1ff;
+  min-height: 100vh;
+}
+.navbar .navbar-brand.glow-text{
+  text-shadow: 0 0 8px rgba(49,195,255,0.8);
+}
+.poster-wrapper{
+  perspective: 1000px;
+  position: relative;
+}
+.parallax{
+  position: relative;
+  height: 100%;
+}
+.layer{ position:absolute; inset:0; }
+.layer-back{ background: radial-gradient(circle at 30% 20%, rgba(49,195,255,0.1), transparent 60%); transform: translateZ(-20px) scale(1.05); }
+.layer-mid{ background: radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05), transparent 60%); transform: translateZ(-10px) scale(1.02); }
+.layer-front{ position: relative; transform: translateZ(0); }
+.poster-card{ border-radius: 16px; overflow: hidden; }
+
+.cursor-glow{
+  position:absolute; width:160px; height:160px; border-radius:50%; pointer-events:none;
+  background: radial-gradient(circle, rgba(49,195,255,0.35), rgba(49,195,255,0.0) 60%);
+  filter: blur(12px); transform: translate(-50%, -50%); mix-blend-mode: screen; display:none;
+}
+
+/* Canvas responsive container */
+#posterCanvas{ width:100%; height:auto; display:block; }
+
+.card.bg-dark{ background-color: rgba(0,0,0,0.6) !important; backdrop-filter: blur(6px); }
+
+.btn-primary{ background: linear-gradient(135deg, #0096ff, #00d4ff); border:0; }
+.btn-outline-light{ border-color: rgba(255,255,255,0.4); }
